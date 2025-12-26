@@ -8,18 +8,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "zustand": "^4.5.0",
+    "@vercel/node": "^5.5.16",
     "fflate": "^0.8.0",
     "glob-to-regexp": "^0.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
-    "remark-gfm": "^4.0.0"
+    "remark-gfm": "^4.0.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@types/glob-to-regexp": "*",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
-    "@types/glob-to-regexp": "*",
     "@vitejs/plugin-react": "^4.0.0",
     "typescript": "^5.6.3",
     "vite": "^5.0.0"
