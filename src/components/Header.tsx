@@ -49,20 +49,18 @@ function triggerZip() { fileRef.current?.click() }
 
     async function loadBranches(input: string) {
     const parsed = parseRepo(input)
-    const owner = parsed?.owner.trim()
-    const repo = parsed?.repo.trim()
     if (!parsed) { setBranches([]); return }
     try {
       setLoadingBranches(true)
 
       let defaultBranch = 'main'
-      const repoRes = await fetch(`/api/github/repo?owner=${owner}&repo=${repo}`)
+      const repoRes = await fetch(`https://api.github.com/repos/${parsed.owner}/${parsed.repo}`)
       if (repoRes.ok) {
         const repoData = await repoRes.json() as any
         if (repoData?.default_branch) defaultBranch = String(repoData.default_branch)
       }
 
-      const brRes = await fetch(`/api/github/branches?owner=${owner}&repo=${repo}`)
+      const brRes = await fetch(`/api/github/branches?owner=${parsed.owner}&repo=${parsed.repo}`)
       if (!brRes.ok) throw new Error('branch fetch failed')
       const data = await brRes.json() as any[]
       const list = data.map(b => ({ name: b.name as string }))
