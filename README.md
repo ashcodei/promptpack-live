@@ -49,7 +49,3 @@ Then open the local URL shown in your terminal.
 ## License
 
 MIT
-
----
-
-If you want a slightly more “startup-y” tone or a more “developer util” tone, I can tweak the wording in one pass.
